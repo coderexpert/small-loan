@@ -30,8 +30,10 @@ class HomeController extends Controller
             return redirect('/admin/dashboard');
         }
 
+        $notifications = App\Broadcast::all();
+
         $loans = App\Loan::loans()->where('user_id', Auth::user()->id);
-        return view('home', compact('loans'));
+        return view('home', compact('loans', 'notifications'));
     }
 
     public function member_contribution()

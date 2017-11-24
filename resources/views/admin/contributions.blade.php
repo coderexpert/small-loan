@@ -36,6 +36,7 @@
 							<form id="approve-form" method="post" action="{{ route('approveContribution', $contribution->id) }}" style="display: none;">
 									{{ csrf_field() }}
 							</form>
+						</td>
 						@endif
 					</tr>
 					@endforeach

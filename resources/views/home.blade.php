@@ -90,6 +90,25 @@
                     @endif
                 </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Notifications from Admin</div>
+                </div>
+                <div class="panel-body">
+                    @if(count($notifications))
+                    <div class="list-group">
+                    @foreach($notifications as $notification)
+                        <li class="list-group-item">
+                            <p><strong>{{  $notification->title }}</strong></p>
+                            <p>{{  $notification->message }}</p>
+                        </li>
+                    @endforeach
+                    </div>
+                    @else
+                        <h6 class="text-center text-muted">No notications</h6>
+                    @endif
+                </div>
+            </div>
         </div>    
     </div>
 </div>
