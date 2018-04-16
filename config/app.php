@@ -4,19 +4,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Name
-    |--------------------------------------------------------------------------
-    |
-    | This value is the name of your application. This value is used when the
-    | framework needs to place the application's name in a notification or
-    | any other location as required by the application or its packages.
-    |
-    */
-
-    'name' => env('APP_NAME', 'Laravel'),
-
-    /*
-    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
@@ -27,7 +14,6 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
-
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -40,7 +26,6 @@ return [
     */
 
     'debug' => env('APP_DEBUG', false),
-
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -52,8 +37,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
-
+    'url' => env('APP_URL', ''),
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -66,7 +50,6 @@ return [
     */
 
     'timezone' => 'UTC',
-
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -79,7 +62,6 @@ return [
     */
 
     'locale' => 'en',
-
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -92,7 +74,6 @@ return [
     */
 
     'fallback_locale' => 'en',
-
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -105,9 +86,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
-
     'cipher' => 'AES-256-CBC',
-
     /*
     |--------------------------------------------------------------------------
     | Logging Configuration
@@ -122,9 +101,7 @@ return [
     */
 
     'log' => env('APP_LOG', 'single'),
-
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
-
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -153,7 +130,6 @@ return [
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
-        Illuminate\Notifications\NotificationServiceProvider::class,
         Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
@@ -163,22 +139,25 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-        /*
-         * Package Service Providers...
-         */
-
+        Collective\Html\HtmlServiceProvider::class,
+        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Aloha\Twilio\Support\Laravel\ServiceProvider::class,
+        RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
+        Elibyy\TCPDF\ServiceProvider::class,
+        Softon\Sms\SmsServiceProvider::class,
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
 
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
@@ -196,8 +175,6 @@ return [
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
-        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
-        'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
@@ -211,7 +188,6 @@ return [
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
-        'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
@@ -225,6 +201,16 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
+        'Reminder' => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
+        'Sentinel' => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
+        'Flash' => Laracasts\Flash\Flash::class,
+        'dPDF' => Barryvdh\DomPDF\Facade::class,
+        'PDF' => Elibyy\TCPDF\Facades\TCPDF::class,
+        'Twilio' => Aloha\Twilio\Support\Laravel\Facade::class,
+        'Sms' => Softon\Sms\Facades\Sms::class,
 
     ],
 
